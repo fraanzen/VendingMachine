@@ -2,16 +2,23 @@ package se.ecutb.mattias.model;
 
 public class ImplementVM implements VendingMachine{
 
+    int moneypool = 0;
+
     @Override
     public void addCurrency(int amount) {
-       int valid[] = new int[]{1, 5, 10, 20, 50, 100, 500, 1000};
-        int moneypool = getBalance();
-       for (int i=0; i<valid.length; i++){
-           if (amount == valid[i]){
-               moneypool = moneypool+amount;
-               System.out.println("You added: "+amount);
+       int beforeDeposit = 0;
+       int[] validMoney = new int[]{1, 5, 10, 20, 50, 100, 500, 1000};
+       for (int i=0; i<validMoney.length; i++){
+           if (amount == validMoney[i]){
+               moneypool = moneypool + amount;
+               System.out.println("You added: " + amount);
+               System.out.println("Moneypool = " + moneypool);
+               beforeDeposit = moneypool;
+               break;
            }
-       }
+       }if (beforeDeposit == 0){
+            System.out.println("No money added.");
+        }
     }
 
 
@@ -32,17 +39,13 @@ public class ImplementVM implements VendingMachine{
 
     @Override
     public int getBalance() {
-        return 0;
+        return moneypool;
     }
 
     @Override
     public String[] getProducts() {
-        return new String[0];
-    }
 
-    @Override
-    public int moneyPool() {
-        return 0;
+        return new String[0];
     }
 
     public void array(){

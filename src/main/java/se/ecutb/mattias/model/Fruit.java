@@ -8,4 +8,13 @@ public class Fruit extends Product {
     public  String use(int index){
         return "You eat the  " +getName() + "Because it's healthy";
     }
+
+    @Override
+    public String toString() {
+        return "Fruit:" +
+                "name:'" + name + '\'' +
+                ", price:" + price +
+                ", productInfo:'" + productInfo + '\'';
+
+    }
 }

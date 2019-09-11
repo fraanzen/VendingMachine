@@ -14,5 +14,4 @@ public interface VendingMachine{
 
     String [] getProducts ();
 
-    int moneyPool();
 }

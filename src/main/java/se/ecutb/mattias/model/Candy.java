@@ -9,6 +9,11 @@ public class Candy extends Product{
         return "You happily chew on " +getName();
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Candy:" +
+                "name:'" + name + '\'' +
+                ", price:" + price +
+                ", productInfo:" + productInfo + '\'';
+    }
 }

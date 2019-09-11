@@ -12,10 +12,25 @@ import se.ecutb.mattias.model.VendingMachine;
 public class AppTest 
 {
     @Test
-    public void shouldprintaddedint() {
-        VendingMachine hej = new ImplementVM();
-        int actual = hej.addCurrency(50);
-        actual = actual+hej.addCurrency(50);
-        Assert.assertEquals(100, actual);
+    public void test_add_money(){
+        VendingMachine vendingMachine = new ImplementVM();
+
+        vendingMachine.addCurrency(100);
+        vendingMachine.addCurrency(1);
+
+        Assert.assertEquals(101, vendingMachine.getBalance());
+
+    }
+
+    @Test
+    public void test_add_wrong_money(){
+        VendingMachine vendingMachine = new ImplementVM();
+
+        vendingMachine.addCurrency(1);
+        vendingMachine.addCurrency(3);
+        vendingMachine.addCurrency(20);
+
+        Assert.assertEquals(21, vendingMachine.getBalance());
+
     }
 }
